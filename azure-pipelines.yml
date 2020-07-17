@@ -27,10 +27,9 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
-- stage: Execute
-  task: DockerCompose@0
-  inputs:
-    containerregistrytype: 'Container Registry'
-    dockerComposeFile: '**/docker-compose.yml'
-    action: 'Run a Docker Compose command'
-    dockerComposeCommand: 'up'         
+    - task: DockerCompose@0
+      inputs:
+       containerregistrytype: 'Container Registry'
+       dockerComposeFile: '**/docker-compose.yml'
+       action: 'Run a Docker Compose command'
+       dockerComposeCommand: 'up'         
