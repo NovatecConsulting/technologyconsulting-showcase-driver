@@ -10,7 +10,10 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-
+  GATLING_NR_USERS:
+  GATLING_MAX_DURATION:
+  GATLING_RAMPUP_TIME:
+  GATLING_NR_USERS_AT_ONCE:    
 stages:
 - stage: Compose
   displayName: Build image trough compose and run
