@@ -20,6 +20,10 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
+    - task: CmdLine@2
+      inputs:
+        script: 'chmod +x bin/run.sh' 
+  
     - task: DockerCompose@0
       inputs:
        containerregistrytype: 'Container Registry'
