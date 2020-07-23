@@ -17,7 +17,7 @@ variables:
   GATLING_NR_USERS_AT_ONCE:
   containerimagetag: '$(Build.SourceVersion)'
   containerregistry: 'nttcshowcase.azurecr.io'
-  containerimagerepository: 'technologyconsulting-showcase-supplierdomain'
+  containerimagerepository: 'technologyconsulting-showcase-driver'
   containerregistrysericeconnection: 'acr-sc'      
 
 stages:
@@ -38,9 +38,10 @@ stages:
        dockerComposeFile: '**/docker-compose.yml'
        action: 'Run a Docker Compose command'
        dockerComposeCommand: 'up'
-    - task: DockerCompose@0
-      inputs:
-       containerregistrytype: 'Container Registry'
-       dockerComposeFile: '**/docker-compose.yml'
-       action: 'Run Docker Compose push'
-       dockerComposeCommand: 'push'           
+    - task: Docker@2
+    inputs:
+      containerRegistry: $(containerregistrysericeconnection)
+      repository: $(containerimagerepository)
+      command: 'buildAndPush'
+      Dockerfile: '**/Dockerfile'
+      tags: '$(containerimagetag)'  
