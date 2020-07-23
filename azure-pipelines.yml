@@ -34,14 +34,14 @@ stages:
         script: 'chmod +x bin/run.sh' 
     - task: DockerCompose@0
       inputs:
-       containerregistrytype: 'Container Registry'
-       dockerComposeFile: '**/docker-compose.yml'
-       action: 'Run a Docker Compose command'
-       dockerComposeCommand: 'up'
+        containerregistrytype: 'Container Registry'
+        dockerComposeFile: '**/docker-compose.yml'
+        action: 'Run a Docker Compose command'
+        dockerComposeCommand: 'up'
     - task: Docker@2
-    inputs:
-      containerRegistry: $(containerregistrysericeconnection)
-      repository: $(containerimagerepository)
-      command: 'buildAndPush'
-      Dockerfile: '**/Dockerfile'
-      tags: '$(containerimagetag)'  
+      inputs:
+        containerRegistry: $(containerregistrysericeconnection)
+        repository: $(containerimagerepository)
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+        tags: '$(containerimagetag)'   
