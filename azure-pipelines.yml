@@ -10,12 +10,18 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
+  GATLING_BASEURL:
   GATLING_NR_USERS:
   GATLING_MAX_DURATION:
   GATLING_RAMPUP_TIME:
-  GATLING_NR_USERS_AT_ONCE:    
+  GATLING_NR_USERS_AT_ONCE:
+  containerimagetag: '$(Build.SourceVersion)'
+  containerregistry: 'nttcshowcase.azurecr.io'
+  containerimagerepository: 'technologyconsulting-showcase-supplierdomain'
+  containerregistrysericeconnection: 'acr-sc'      
+
 stages:
-- stage: Compose
+- stage: Compose 
   displayName: Build image trough compose and run
   jobs:  
   - job: Compose
@@ -26,10 +32,15 @@ stages:
     - task: CmdLine@2
       inputs:
         script: 'chmod +x bin/run.sh' 
-  
     - task: DockerCompose@0
       inputs:
        containerregistrytype: 'Container Registry'
        dockerComposeFile: '**/docker-compose.yml'
        action: 'Run a Docker Compose command'
-       dockerComposeCommand: 'up'         
+       dockerComposeCommand: 'up'
+    - task: DockerCompose@0
+      inputs:
+       containerregistrytype: 'Container Registry'
+       dockerComposeFile: '**/docker-compose.yml'
+       action: 'Run Docker Compose push'
+       dockerComposeCommand: 'push'           
