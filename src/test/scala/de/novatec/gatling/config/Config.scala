@@ -8,7 +8,7 @@ import scala.concurrent.duration._
 
 object Config {
   // params
-  val baseUrl: String = sys.env.getOrElse("GATLING_BASEURL", "http://supplierdomain-tc-showcase-prod.trafficmanager.net").toString
+  val baseUrl: String = sys.env.getOrElse("GATLING_BASEURL","!ERRORinsertValidBaseURL!").toString
   val usersAtOnce: Int = sys.env.getOrElse("GATLING_NR_USERS_AT_ONCE", "2").toInt
   val users: Int = sys.env.getOrElse("GATLING_NR_USERS", "10").toInt
   val maxDuration: FiniteDuration = sys.env.getOrElse("GATLING_MAX_DURATION", "2").toInt minutes
