@@ -18,7 +18,7 @@ variables:
   containerimagetag: '$(Build.SourceVersion)'
   containerregistry: 'nttcshowcase.azurecr.io'
   containerimagerepository: 'technologyconsulting-showcase-driver'
-  containerregistrysericeconnection: 'acr-sc'      
+  containerregistryserviceconnection: 'acr-sc'      
 
 stages:
 - stage: Compose 
@@ -34,15 +34,18 @@ stages:
         script: 'chmod +x bin/run.sh' 
     - task: DockerCompose@0
       inputs:
-        containerregistrytype: 'Container Registry'
+        action: 'Build services'
+        containerregistrytype: 'dockerregistry'
+        dockerRegistryEndpoint: $(containerregistryserviceconnection)
+        azureContainerRegistry: $(containerimagerepository)
         dockerComposeFile: '**/docker-compose.yml'
-        action: 'Run a Docker Compose command'
-        dockerComposeCommand: 'up'
+        tags: '$(containerimagetag)'
+        includeLatestTag: true
     - task: DockerCompose@0
       inputs:
         action: 'Push services'
         containerregistrytype: 'dockerregistry'
-        dockerRegistryEndpoint: $(containerregistrysericeconnection)
+        dockerRegistryEndpoint: $(containerregistryserviceconnection)
         azureContainerRegistry: $(containerimagerepository)
         dockerComposeFile: '**/docker-compose.yml'
         tags: '$(containerimagetag)'
