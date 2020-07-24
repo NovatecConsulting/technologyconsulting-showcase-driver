@@ -42,6 +42,6 @@ stages:
       inputs:
         containerRegistry: $(containerregistrysericeconnection)
         repository: $(containerimagerepository)
-        command: 'buildAndPush'
+        command: 'push'
         Dockerfile: '**/Dockerfile'
         tags: '$(containerimagetag)'   
