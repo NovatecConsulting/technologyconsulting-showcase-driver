@@ -40,7 +40,7 @@ stages:
         azureContainerRegistry: $(containerimagerepository)
         dockerComposeFile: '**/docker-compose.yml'
         detached: false
-        additionalImageTags: '$(containerimagetag)'   
+        entrypoint: mvn gatling:test -o  
     - task: DockerCompose@0
       inputs:
         action: 'Push services'

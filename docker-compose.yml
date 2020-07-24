@@ -4,8 +4,6 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    #image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${IMAGE_NAME}:latest
-    #command: -r ${AWS_REPORT_BUCKET}
     image: technologyconsulting-showcase-driver
     environment:
       - GATLING_BASEURL=http://supplierdomain-tc-showcase-prod.trafficmanager.net
@@ -18,9 +16,3 @@ services:
       nofile:
         soft: 65535
         hard: 65535
-   # logging:
-    #  driver: awslogs
-     # options:
-      #  awslogs-group: /ecs/gatling-runner
-       # awslogs-region: ${AWS_REGION}
-        #awslogs-stream-prefix: gatling-runner

@@ -1,0 +1,16 @@
+app: 
+  image:
+    repository: 
+    tag: 
+    pullsecret: 
+  appconfig:
+    GATLING_BASEURL: http://supplierdomain-tc-showcase-prod.trafficmanager.net
+    GATLING_NR_USERS: 
+    GATLING_MAX_DURATION:
+    GATLING_RAMPUP_TIME:
+    GATLING_NR_USERS_AT_ONCE:   
+  scale:
+    minReplica: 1
+    maxReplicas: 3
+  azureconfig:
+    resourcegroup: 
