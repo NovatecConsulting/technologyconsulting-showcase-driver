@@ -38,10 +38,12 @@ stages:
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Run a Docker Compose command'
         dockerComposeCommand: 'up'
-    - task: Docker@2
+    - task: DockerCompose@0
       inputs:
+        containerregistrytype: 'Azure Container Registry'
         containerRegistry: $(containerregistrysericeconnection)
         repository: $(containerimagerepository)
-        command: 'push'
-        Dockerfile: '**/Dockerfile'
-        tags: '$(containerimagetag)'   
+        action: 'Push services'
+        dockerComposeFile: '**/docker-compose.yml'
+        tags: '$(containerimagetag)'
+        includeLatestTag: true   
