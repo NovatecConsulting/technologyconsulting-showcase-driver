@@ -18,7 +18,7 @@ variables:
   containerimagetag: '$(Build.SourceVersion)'
   containerregistry: 'nttcshowcase.azurecr.io'
   containerimagerepository: 'technologyconsulting-showcase-driver'
-  containerregistrysericeconnection: 'rm-sc'      
+  containerregistrysericeconnection: 'acr-sc'      
 
 stages:
 - stage: Compose 
@@ -42,7 +42,7 @@ stages:
       inputs:
         action: 'Push services'
         containerregistrytype: 'dockerregistry'
-        azureSubscriptionEndpoint: $(containerregistrysericeconnection)
+        dockerRegistryEndpoint: $(containerregistrysericeconnection)
         azureContainerRegistry: $(containerimagerepository)
         dockerComposeFile: '**/docker-compose.yml'
         tags: '$(containerimagetag)'
