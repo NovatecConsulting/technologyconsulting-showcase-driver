@@ -34,22 +34,12 @@ stages:
         script: 'chmod +x bin/run.sh' 
     - task: DockerCompose@0
       inputs:
-        action: 'Build services'
-        containerregistrytype: 'dockerregistry'
-        dockerRegistryEndpoint: $(containerregistryserviceconnection)
-        azureContainerRegistry: $(containerimagerepository)
-        dockerComposeFile: '**/docker-compose.yml'
-        tags: '$(containerimagetag)'
-        includeLatestTag: true
-    - task: DockerCompose@0
-      inputs:
         action: 'Run services'
         containerregistrytype: 'dockerregistry'
         dockerRegistryEndpoint: $(containerregistryserviceconnection)
         azureContainerRegistry: $(containerimagerepository)
         dockerComposeFile: '**/docker-compose.yml'
-        tags: '$(containerimagetag)'
-        includeLatestTag: true    
+        tags: '$(containerimagetag)'   
     - task: DockerCompose@0
       inputs:
         action: 'Push services'
@@ -58,4 +48,3 @@ stages:
         azureContainerRegistry: $(containerimagerepository)
         dockerComposeFile: '**/docker-compose.yml'
         tags: '$(containerimagetag)'
-        includeLatestTag: true   
