@@ -10,7 +10,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  GATLING_BASEURL:
+  GATLING_BASEURL: http://supplierdomain-tc-showcase-prod.trafficmanager.net
   GATLING_NR_USERS:
   GATLING_MAX_DURATION:
   GATLING_RAMPUP_TIME:
@@ -40,7 +40,8 @@ stages:
         azureContainerRegistry: $(containerimagerepository)
         dockerComposeFile: '**/docker-compose.yml'
         detached: false
-        containerCommand: mvn gatling:test -o  
+        serviceName: $(containerimagerepository)
+        entrypoint: ./single.sh
     - task: DockerCompose@0
       inputs:
         action: 'Push services'
