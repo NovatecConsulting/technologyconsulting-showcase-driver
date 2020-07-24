@@ -49,4 +49,4 @@ stages:
         azureContainerRegistry: $(containerimagerepository)
         dockerComposeFile: '**/docker-compose.yml'
         includeLatestTag: 'true'
-        additionalImageTags: '$(containerimagetag)'
+        
