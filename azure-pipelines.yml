@@ -18,7 +18,7 @@ variables:
   containerimagetag: '$(Build.SourceVersion)'
   containerregistry: 'nttcshowcase.azurecr.io'
   containerimagerepository: 'technologyconsulting-showcase-driver'
-  containerregistrysericeconnection: 'acr-sc'      
+  containerregistrysericeconnection: 'rm-sc'      
 
 stages:
 - stage: Compose 
