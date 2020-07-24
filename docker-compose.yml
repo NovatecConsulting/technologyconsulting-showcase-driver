@@ -5,6 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: technologyconsulting-showcase-driver
+    entrypoint: ./single.sh
     environment:
       - GATLING_BASEURL=http://supplierdomain-tc-showcase-prod.trafficmanager.net
       - GATLING_NR_USERS=1

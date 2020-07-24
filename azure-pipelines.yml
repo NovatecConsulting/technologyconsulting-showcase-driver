@@ -41,7 +41,6 @@ stages:
         dockerComposeFile: '**/docker-compose.yml'
         detached: false
         serviceName: $(containerimagerepository)
-        entrypoint: ./single.sh
     - task: DockerCompose@0
       inputs:
         action: 'Push services'
