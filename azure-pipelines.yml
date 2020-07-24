@@ -39,6 +39,7 @@ stages:
         dockerRegistryEndpoint: $(containerregistryserviceconnection)
         azureContainerRegistry: $(containerimagerepository)
         dockerComposeFile: '**/docker-compose.yml'
+        detached: false
         tags: '$(containerimagetag)'   
     - task: DockerCompose@0
       inputs:
@@ -47,4 +48,4 @@ stages:
         dockerRegistryEndpoint: $(containerregistryserviceconnection)
         azureContainerRegistry: $(containerimagerepository)
         dockerComposeFile: '**/docker-compose.yml'
-        tags: '$(containerimagetag)'
+        additionalImageTags: '$(containerimagetag)'
