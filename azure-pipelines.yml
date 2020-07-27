@@ -21,7 +21,7 @@ variables:
   containerregistryserviceconnection: 'acr-sc'      
 
 stages:
-- stage: Build and Test
+- stage: Build_and_Test
   displayName: Build image trough compose and run
   jobs:  
   - job: Compose
