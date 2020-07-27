@@ -36,15 +36,15 @@ stages:
         dockerComposeFile: '**/docker-compose.yml'
         serviceName: $(containerimagerepository)     
         additionalImageTags: $(containerimagetag)
-    # - task: DockerCompose@0
-    #   inputs:
-    #     action: 'Run services'
-    #     containerregistrytype: 'dockerregistry'
-    #     dockerRegistryEndpoint: $(containerregistryserviceconnection)
-    #     azureContainerRegistry: $(containerimagerepository)
-    #     dockerComposeFile: '**/docker-compose.yml'
-    #     detached: false
-    #     serviceName: $(containerimagerepository)
+    - task: DockerCompose@0
+      inputs:
+        action: 'Run services'
+        containerregistrytype: 'dockerregistry'
+        dockerRegistryEndpoint: $(containerregistryserviceconnection)
+        azureContainerRegistry: $(containerimagerepository)
+        dockerComposeFile: '**/docker-compose.yml'
+        detached: false
+        serviceName: $(containerimagerepository)
     - task: DockerCompose@0
       inputs:
         action: 'Push services'
@@ -84,7 +84,7 @@ stages:
         command: 'upgrade'
         chartType: 'FilePath'
         chartPath: './k8s/'
-        releaseName: 'driver2'
+        releaseName: 'driver'
         valueFile: './k8s/values.yaml'
         overrideValues: 'app.image.pullsecret=$(containerregistry-pullsecret),app.image.tag=$(containerimagetag),app.image.repository=$(containerregistry)/$(containerimagerepository),app.azureconfig.resourcegroup="tc-showcase-prod" '
         resetValues: true
