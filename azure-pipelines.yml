@@ -31,16 +31,26 @@ stages:
     steps:
     - task: CmdLine@2
       inputs:
-        script: 'chmod +x bin/single.sh' 
+        script: 'chmod +x bin/single.sh'
     - task: DockerCompose@0
       inputs:
-        action: 'Run services'
+        action: 'Build services'
+        containerregistrytype: 'dockerregistry'
+        dockerRegistryEndpoint: $(containerregistryserviceconnection)
+        azureContainerRegistry: $(containerimagerepository)
+        dockerComposeFile: '**/docker-compose.yml'
+        serviceName: $(containerimagerepository)     
+        additionalImageTags: $(containerimagetag)
+    - task: DockerCompose@0
+      inputs:
+        action: 'Run a Docker Compose command'
         containerregistrytype: 'dockerregistry'
         dockerRegistryEndpoint: $(containerregistryserviceconnection)
         azureContainerRegistry: $(containerimagerepository)
         dockerComposeFile: '**/docker-compose.yml'
         detached: false
         serviceName: $(containerimagerepository)
+        dockerComposeCommand:  -f **/docker-compose.yml -f docker-compose.override.yml up 
     - task: DockerCompose@0
       inputs:
         action: 'Push services'
