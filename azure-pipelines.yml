@@ -84,7 +84,7 @@ stages:
         command: 'upgrade'
         chartType: 'FilePath'
         chartPath: './k8s/'
-        releaseName: 'driver'
+        releaseName: 'driver2'
         valueFile: './k8s/values.yaml'
         overrideValues: 'app.image.pullsecret=$(containerregistry-pullsecret),app.image.tag=$(containerimagetag),app.image.repository=$(containerregistry)/$(containerimagerepository),app.azureconfig.resourcegroup="tc-showcase-prod" '
         resetValues: true
