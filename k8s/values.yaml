@@ -1,7 +1,7 @@
 app: 
   image:
     repository: 
-    tag: latest 
+    tag:  
     pullsecret: 
   appconfig:
     GATLING_BASEURL: 
@@ -11,6 +11,6 @@ app:
     GATLING_NR_USERS_AT_ONCE:   
   scale:
     minReplica: 1
-    maxReplicas: 3
+    maxReplicas: 1
   azureconfig:
     resourcegroup: 
