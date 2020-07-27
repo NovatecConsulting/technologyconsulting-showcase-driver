@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}-config
+data:
+  GATLING_BASEURL: {{ .Values.app.appconfig.GATLING_BASEURL }}
+  GATLING_NR_USERS: {{ .Values.app.appconfig.GATLING_NR_USERS}}
+  GATLING_MAX_DURATION: {{ .Values.app.appconfig.GATLING_MAX_DURATION }}
+  GATLING_RAMPUP_TIME: {{ .Values.app.appconfig.GATLING_RAMPUP_TIME }}
+  GATLING_NR_USERS_AT_ONCE: {{ .Values.app.appconfig. GATLING_NR_USERS_AT_ONCE }} 
