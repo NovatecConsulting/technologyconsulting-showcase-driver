@@ -86,6 +86,6 @@ stages:
         chartPath: './k8s/'
         releaseName: 'driver'
         valueFile: './k8s/values.yaml'
-        overrideValues: 'app.image.pullsecret=$(containerregistry-pullsecret),app.image.tag=$(containerimagetag),app.image.repository=$(containerregistry)/$(containerimagerepository),app.azureconfig.resourcegroup="tc-showcase-prod",app.azureconfig.loadbalancerip=$(orderdomain-publicip),app.appconfig.MANUFACTURE_USER=$(orderdomain-auth-manufacture-user),app.appconfig.MANUFACTURE_PASSWORD=$(orderdomain-auth-manufacture-password),app.dbconfig.host=changeme,app.dbconfig.user=changeme,app.dbconfig.password=changeme,app.dbconfig.schema=changeme,app.appconfig.GATLING_BASEURL=$(GATLING_BASEURL) '
+        overrideValues: 'app.image.pullsecret=$(containerregistry-pullsecret),app.image.tag=$(containerimagetag),app.image.repository=$(containerregistry)/$(containerimagerepository),app.azureconfig.resourcegroup="tc-showcase-prod" '
         resetValues: true
         force: false        
