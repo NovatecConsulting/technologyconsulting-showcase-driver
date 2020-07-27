@@ -11,6 +11,6 @@ app:
     GATLING_NR_USERS_AT_ONCE: 1    
   scale:
     minReplica: 1
-    maxReplicas: 1<w
+    maxReplicas: 1
   azureconfig:
     resourcegroup: 
