@@ -5,7 +5,7 @@ app:
     pullsecret: 
   appconfig:
     GATLING_BASEURL: "http://supplierdomain-tc-showcase-prod.trafficmanager.net"
-    GATLING_NR_USERS: 10
+    GATLING_NR_USERS: 20
     GATLING_MAX_DURATION: 1
     GATLING_RAMPUP_TIME: 10
     GATLING_NR_USERS_AT_ONCE: 3    
