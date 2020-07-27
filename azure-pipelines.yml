@@ -81,7 +81,7 @@ stages:
         azureResourceGroup: 'tc-showcase-prod'
         kubernetesCluster: 'k8s-tc-showcase-prod'
         namespace: 'driver'
-        command: 'delete --purge'
+        command: 'upgrade --install'
         chartType: 'FilePath'
         chartPath: './k8s/'
         releaseName: 'driver'
