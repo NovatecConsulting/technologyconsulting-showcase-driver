@@ -8,7 +8,7 @@ app:
     GATLING_NR_USERS: 3000
     GATLING_MAX_DURATION: 1
     GATLING_RAMPUP_TIME: 10
-    GATLING_NR_USERS_AT_ONCE: 3    
+    GATLING_NR_USERS_AT_ONCE: 10   
   scale:
     minReplica: 1
     maxReplicas: 1
