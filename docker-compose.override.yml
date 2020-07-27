@@ -1,3 +1,0 @@
-technologyconsulting-showcase-driver:
-  image: technologyconsulting-showcase-driver: $(containerimagetag)
-    

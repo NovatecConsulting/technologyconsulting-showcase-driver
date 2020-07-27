@@ -43,14 +43,13 @@ stages:
         additionalImageTags: $(containerimagetag)
     - task: DockerCompose@0
       inputs:
-        action: 'Run a Docker Compose command'
+        action: 'Run services'
         containerregistrytype: 'dockerregistry'
         dockerRegistryEndpoint: $(containerregistryserviceconnection)
         azureContainerRegistry: $(containerimagerepository)
         dockerComposeFile: '**/docker-compose.yml'
         detached: false
         serviceName: $(containerimagerepository)
-        dockerComposeCommand:  -f **/docker-compose.yml -f docker-compose.override.yml up 
     - task: DockerCompose@0
       inputs:
         action: 'Push services'
@@ -58,7 +57,8 @@ stages:
         dockerRegistryEndpoint: $(containerregistryserviceconnection)
         azureContainerRegistry: $(containerimagerepository)
         dockerComposeFile: '**/docker-compose.yml'
-        includeLatestTag: 'true'
+        includeLatestTag: 'false'
+        additionalImageTags: $(containerimagetag)
     # - task: AzureKeyVault@1
     #   inputs:
     #     azureSubscription: 'Practice-Area-TC-Dev(95352c54-cee5-4d25-a9a1-0857616d97e5)'
