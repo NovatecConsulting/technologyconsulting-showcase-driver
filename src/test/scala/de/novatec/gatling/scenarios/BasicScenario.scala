@@ -11,5 +11,5 @@ object BasicScenario extends Simulation {
     .get("/supplierdomain/supplier/")
 		.basicAuth("testuser","pwd"))
     .pause(5)
-    
+    //TODO add more complex get scenarios!
 }

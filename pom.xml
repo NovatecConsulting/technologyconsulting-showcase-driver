@@ -183,6 +183,7 @@
                     <includes>
                         <simulationClass>de.novatec.gatling.simulations.BasicSimulation</simulationClass>
                         <simulationClass>de.novatec.gatling.simulations.PostSimulation</simulationClass>
+                        <simulationClass>de.novatec.gatling.simulations.PostSimulationFail</simulationClass>
                     </includes>
                     <jvmArgs>
                         <jvmArg>-Xss20M</jvmArg>
