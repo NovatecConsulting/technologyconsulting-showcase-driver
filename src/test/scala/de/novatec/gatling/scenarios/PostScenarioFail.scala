@@ -10,7 +10,7 @@ object PostScenarioFail extends Simulation {
     .exec(http("POST_purchase_component-2")
     .post("/supplierdomain/supplier/purchase")
     .header("Content-Type", "application/json")
-    .body(RawFileBody("bodies/component_demands_non_existing_supplier.json"))
+    .body(RawFileBody("bodies/supplier/component_demands_non_existing_supplier.json"))
 		.basicAuth("admin","adminpwd"))
     .pause(5)
     .exec(http("POST_deliver_component-1")

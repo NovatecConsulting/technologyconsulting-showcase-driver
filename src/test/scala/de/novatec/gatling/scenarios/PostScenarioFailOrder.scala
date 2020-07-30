@@ -13,10 +13,17 @@ object PostScenarioFailOrder extends Simulation {
     .body(RawFileBody("bodies/order/items_quantity_pairs.json"))
 		.basicAuth("admin","adminpwd"))
     .pause(5)
+    .exec(http("POST_order_Fail_2") //I don't know why this test is failing! It should work! 
+    .post("/orderdomain/order/1")
+    .header("Content-Type", "application/json")
+    .body(RawFileBody("bodies/order/items_quantity_pairs.json"))
+		.basicAuth("admin","adminpwd"))
+    .pause(5)
     .exec(http("POST_order_inventory_Fail_1")
     .post("/orderdomain/customer/add_inventory/1")
     .header("Content-Type", "application/json")
 		.basicAuth("testuser","pwd"))
     .pause(5)
+
 }
 

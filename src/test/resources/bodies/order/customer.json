@@ -1,19 +1,19 @@
 {
-	"firstName": "firstName",
-	"lastName": "lastName",
+	"firstName": "Gatling",
+	"lastName": "Testrunner",
 	"contact": "contact",
 	"credit": "GC",
-	"creditLimit": "1000.00",
-	"balance": "20000.00",
+	"creditLimit": "300000.00",
+	"balance": "123.00",
 	"ytdPayment": "100.00",
 	"customerInventories": [],
 	"address": {
-		"street1": "street1",
+		"street1": "Dieselstraße 18/1",
 		"street2": "street2",
-		"city": "city",
+		"city": "Stuttgart",
 		"state": "DE",
-		"country": "county",
-		"zip": "zip",
-		"phone": "phone"
+		"country": "BW",
+		"zip": "70771",
+		"phone": "0000000"
 	}
 }
