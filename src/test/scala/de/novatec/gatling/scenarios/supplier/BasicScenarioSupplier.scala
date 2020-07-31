@@ -4,9 +4,9 @@ import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 
-object BasicScenario extends Simulation {
+object BasicScenarioSupplier extends Simulation {
 
-  val basicScenario: ScenarioBuilder = scenario("BasicSimulation")
+  val basicScenarioSupplier: ScenarioBuilder = scenario("BasicSimulationSupplier")
     .exec(http("request_1")
     .get("/supplierdomain/supplier/")
 		.basicAuth("testuser","pwd"))

@@ -1,12 +1,12 @@
 package de.novatec.gatling.simulations
 
 import io.gatling.core.Predef._
-import de.novatec.gatling.scenarios.BasicScenario.basicScenario
-import de.novatec.gatling.config.Config._
+import de.novatec.gatling.scenarios.BasicScenarioSupplier.basicScenarioSupplier
+import de.novatec.gatling.config.ConfigSupplier._
 
 import scala.language.postfixOps
 
-class BasicSimulation extends Simulation {
+class BasicSimulationSupplier extends Simulation {
 
   println("Configuration:")
   println("BaseURL: " + baseUrl)
@@ -16,7 +16,7 @@ class BasicSimulation extends Simulation {
   println("RampUp time: " + rampUpTime)
 
   setUp(
-    basicScenario.inject(atOnceUsers(usersAtOnce),rampUsers(users) during rampUpTime)).maxDuration(maxDuration).protocols(httpProtocol)
+    basicScenarioSupplier.inject(atOnceUsers(usersAtOnce),rampUsers(users) during rampUpTime)).maxDuration(maxDuration).protocols(httpProtocol)
     .assertions(
       global.failedRequests.count.is(0)
     )

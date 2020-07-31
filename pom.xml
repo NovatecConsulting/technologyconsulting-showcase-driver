@@ -181,9 +181,9 @@
                     <reportsOnly>${reportsOnly}</reportsOnly>
                     <runMultipleSimulations>true</runMultipleSimulations>
                     <includes>
-                        <simulationClass>de.novatec.gatling.simulations.BasicSimulation</simulationClass>
-                        <simulationClass>de.novatec.gatling.simulations.PostSimulation</simulationClass>
-                        <simulationClass>de.novatec.gatling.simulations.PostSimulationFail</simulationClass>
+                        <simulationClass>de.novatec.gatling.simulations.BasicSimulationSupplier</simulationClass>
+                        <simulationClass>de.novatec.gatling.simulations.PostSimulationSupplier</simulationClass>
+                        <simulationClass>de.novatec.gatling.simulations.PostSimulationFailSupplier</simulationClass>
                         <simulationClass>de.novatec.gatling.simulations.BasicSimulationOrder</simulationClass>
                         <simulationClass>de.novatec.gatling.simulations.PostSimulationOrder</simulationClass>
                         <simulationClass>de.novatec.gatling.simulations.PostSimulationFailOrder</simulationClass>

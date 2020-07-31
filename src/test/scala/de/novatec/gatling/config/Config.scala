@@ -19,7 +19,7 @@ class Configmaster {
     .acceptEncodingHeader("gzip, deflate")
 }
 
-object Config extends Configmaster {
+object ConfigSupplier extends Configmaster {
   // params
   val baseUrl: String = sys.env.getOrElse("GATLING_BASEURL","!ERRORinsertValidBaseURL!").toString
   

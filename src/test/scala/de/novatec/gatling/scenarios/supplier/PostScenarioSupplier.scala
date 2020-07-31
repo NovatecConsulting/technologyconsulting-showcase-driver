@@ -4,9 +4,9 @@ import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 
-object PostScenario extends Simulation {
+object PostScenarioSupplier extends Simulation {
 
-  val postScenario: ScenarioBuilder = scenario("PostSimulation")
+  val postScenarioSupplier: ScenarioBuilder = scenario("PostSimulationSupplier")
     .exec(http("POST_supplier_1")
     .post("/supplierdomain/supplier/")
     .header("Content-Type", "application/json")
