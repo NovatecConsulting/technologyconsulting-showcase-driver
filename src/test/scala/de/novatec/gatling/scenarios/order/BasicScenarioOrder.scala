@@ -12,5 +12,4 @@ object BasicScenarioOrder extends Simulation {
     .get("/orderdomain/item/count/")
 		.basicAuth("testuser","pwd"))
     .pause(5)
-    //TODO add more complex get scenarios!
 }
