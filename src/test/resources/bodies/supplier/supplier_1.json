@@ -1,16 +1,16 @@
 {
 	"contact": "contact",
-	"name": "Supplier 1",
+	"name": "Supplier Gatling",
 	"replyUrl": "http://localhost:9080/reply",
 	"version": 0,
 	"wsUrl": "http://localhost:9080/ws",
 	"address": {
-		"street1": "street1",
-		"street2": "street2",
-		"city": "city",
+		"street1": "Example",
+		"street2": "Street",
+		"city": "Stuttgart",
 		"state": "DE",
-		"country": "country",
-		"zip": "zip",
+		"country": "BW",
+		"zip": "70569",
 		"phone": "0102020203"
 	}
 }
