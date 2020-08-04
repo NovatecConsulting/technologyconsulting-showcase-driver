@@ -28,7 +28,8 @@ object PostScenarioOrder extends Simulation {
     .header("Content-Type", "application/json")
     .basicAuth("admin","adminpwd"))
     .pause(5)
-    //TODO loop instead only one call!
+    //TODO loop instead only one call! 
+    /* es wäre gut gleich mehrere calls zu sammeln und am ende dann durch ein call array den delete zu machen*/
     .exec(http("POST_order_create-item-1")
     .post("/orderdomain/item/")
     .header("Content-Type", "application/json")

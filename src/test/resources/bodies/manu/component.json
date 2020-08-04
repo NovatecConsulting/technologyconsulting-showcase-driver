@@ -1,0 +1,12 @@
+{
+    "name": "Gatling Component",
+    "description": "This is a Gatling Component",
+    "revision": 1,
+    "planner": 0,
+    "type": null,
+    "purchased": null,
+    "lomark": null,
+    "himark": null,
+    "componentBoms": [],
+    "version": 1
+  }
