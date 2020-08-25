@@ -6,17 +6,8 @@ Read more about it in the blog post [here](https://medium.com/@richard.hendricks
 
 [![Build Status](https://dev.azure.com/nt-tc-showcase/driver/_apis/build/status/driver?branchName=master)](https://dev.azure.com/nt-tc-showcase/driver/_build/latest?definitionId=9&branchName=master)
 ## Prerequisites  
-TODO
-### Install  
-* Docker
-TODO
-## Running  
-The test consists of 3 steps:  
-* Building the Docker image  
-TODO
+Make sure you have docker and docker-compose installed locally. 
 
-## Developing
-TODO extend
 ### Run Gatling tests directly without Docker
 `mvn clean gatling:test`  
 
