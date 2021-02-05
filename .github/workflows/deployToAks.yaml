@@ -35,7 +35,7 @@ jobs:
           ARM_CLIENT_SECRET: ${{ secrets.TC_SHOWCASE_ARM_CLIENT_SECRET }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.TC_SHOWCASE_ARM_SUBSCRIPTION_ID }}
           ARM_TENANT_ID: ${{ secrets.TC_SHOWCASE_ARM_TENANT_ID }}
-          STAGE: 'stag'
+          STAGE: 'dev'
         working-directory: ./resources/pipelines/helperscripts
         run: |
               ./getKeyVaultSecrets.sh
@@ -51,7 +51,7 @@ jobs:
           ARM_TENANT_ID: ${{ secrets.TC_SHOWCASE_ARM_TENANT_ID }}
           AKSRESOURCEGROUP: 'tc-showcase-test'
           AKSNAME: 'k8s-tc-showcase-test'
-          STAGE: 'stag'
+          STAGE: 'dev'
           IMAGETAG: ${{ env.SHORT_SHA }}
         run: |
               docker run \
@@ -76,11 +76,6 @@ jobs:
         working-directory: ./resources/pipelines/helperscripts
         run: |
               sudo rm -rf kubeconfig
-              echo "DBUSER=asdf" >> $GITHUB_ENV
-              echo "DBPWD=asdf" >> $GITHUB_ENV
-              echo "DBFQDN=asdf" >> $GITHUB_ENV
-              echo "INGRESSFQDN=asdf" >> $GITHUB_ENV
-              echo "DRIVERDOMAINIP=asdf" >> $GITHUB_ENV
               echo "SUPPLIERFQDN=asdf" >> $GITHUB_ENV
               echo "ORDERFQDN=asdf" >> $GITHUB_ENV
               echo "MANUFQDN=asdf" >> $GITHUB_ENV
